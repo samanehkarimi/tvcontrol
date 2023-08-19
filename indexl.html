@@ -14,7 +14,10 @@
     function Build_Jason_sendtobackend(idButtom){
         let word=idButtom;
         //console.log("type buttom:"+word);
-        console.log(JSON.stringify(word)) 
+        let contin=JSON.stringify(word);
+        let user = JSON.parse(contin);
+        console.log("type buttom:"+contin); 
+        console.log(user); 
     $.get(function Build_Jason_sendtobackend(){
         alert(word);
     });
