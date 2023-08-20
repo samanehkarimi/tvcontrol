@@ -606,6 +606,10 @@ video {
   top: 2.25rem;
 }
 
+.left-2\/4 {
+  left: 50%;
+}
+
 .col-start-1 {
   grid-column-start: 1;
 }
