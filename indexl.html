@@ -11,12 +11,10 @@
    
   <script src="jquery.min.js"></script>
   <script>
-    function Build_Jason_sendtobackend(idButtom,nameButtom){
-        let data = {Buttom_type:idButtom, name_chanel: nameButtom};
-        let value= idButtom;
+    function build_json_send_to_back_end(name_button,id_button){
+        let data = {button_type: name_button,value : id_button};
         let word=JSON.stringify(data);
         console.log(word);
-        console.log(); 
         //atsal_ba_back_end
         let request = new XMLHttpRequest;
         request.open("POST","url")
@@ -27,17 +25,9 @@
         }
         request.setRequestHeader("content-type","application/json");
         request.send(JSON.stringify(data));
-
-        request.open("GET","url", true);
-        request.onreadystatechange = function() { 
-             if (request.readyState === 4 && request.status === 200) {    
-                let response = JSON.parse(request.responseText);    
-                 }
-        };
-        request.send();
     }
-    function click_power(){
-        const powerButton = document.getElementById("powerButton");
+    function click_power(){ 
+        const powerButton = document.getElementById("on_off");
         const Buttontype = document.getElementById("power");
         const isPowerOn = powerButton.classList.contains("bg-green-500");
         if (isPowerOn) {  
@@ -48,7 +38,7 @@
             powerButton.classList.add("bg-green-500");
         }
         const jsonData = {        
-            powerStatus: isPowerOn ? "off" : "on" ,Buttom_type:"power"};      
+            Buttom_type:"power",  value: isPowerOn ? "off" : "on" };      
         let request = new XMLHttpRequest;
         request.open("POST","url")
         request.onreadystatechange= function(){
@@ -70,7 +60,7 @@
 <div class="flex items-center justify-center absolute  bottom-5 left-2/4">
     <img src="C:\Users\Mohsen\Desktop\tailwindcssh\tvcontrol\CompanyLogo.png"alt="Company logo" class="object-fill w-16 h-16 object-cover rounded-md ">
 </div>
-<div class="rounded-full bg-red-600  lg:h-20 w-20  relative  top-10  left-32 max-w-xs transition duration-300 ease-in-out hover:scale-110 focus:scale-110 active:scale-100 hover:bg-green-500"id= "powerButton" name="power" onclick="click_power()">
+<div class="rounded-full bg-red-600  lg:h-20 w-20  relative  top-10  left-32 max-w-xs transition duration-300 ease-in-out hover:scale-110 focus:scale-110 active:scale-100 hover:bg-yellow-500"id= "on_off" name="power" onclick="click_power()">
     <div class="flex items-center  justify-center h-20 ">
             
             <i class="fa fa-power-off "  style="font-size:50px;color:#ffffff; border-radius: 85%;align-content: center;align-items: center;"></i>
@@ -85,42 +75,42 @@
     </div>
     <div class="h-16 w-48   absolute top-10 right-36">
         <div class="flex items-center  justify-center h-16  font-serif text-xl font-bold text-white ">
-            <button  id= "button type display temperature"id= "chanel " name="0" onclick="Build_Jason_sendtobackend(this.id)">temperature:</button>
+            <button  id= "button type display temperature"id= "temperatureDisplay " name="0" onclick="build_json_send_to_back_end()">temperature:</button>
         </div>
     </div>
 </div>
 <div class=" flex flex-row box-content absolute top-48 ">
     <div class="rounded-md bg-orange-500 h-20 w-20 ml-28 max-w-xs transition duration-300 ease-in-out hover:scale-110 focus:scale-110 active:scale-100 hover:bg-green-500">
         <div class="flex items-center  justify-center h-20 ">
-            <button id= "volume" name="much" onclick="Build_Jason_sendtobackend(this.id,this.name)">
+            <button id= "much" name="volume" onclick="build_json_send_to_back_end(this.name,this.id)">
             <i class="fa fa-volume-up" style="font-size:40px;color:#ffffff; border-radius: 85%;align-content: center;align-items: center;"></i>
             </button>
         </div>
     </div>
     <div class="rounded-md bg-orange-500 h-20 w-20  ml-28 max-w-xs transition duration-300 ease-in-out hover:scale-110 focus:scale-110 active:scale-100 hover:bg-green-500">
         <div class="flex items-center  justify-center h-20 ">
-            <button id= "volume" name="low" onclick="Build_Jason_sendtobackend(this.id,this.name)">
+            <button id= "low" name="volume" onclick="build_json_send_to_back_end(this.name,this.id)">
                 <i class="fa fa-volume-down"  style="font-size:40px;color:#ffffff; border-radius: 85%;align-content: center;align-items: center;"></i>
             </button>
         </div>
     </div>
     <div class="rounded-md bg-orange-500 h-20 w-20 ml-28 max-w-xs transition duration-300 ease-in-out hover:scale-110 focus:scale-110 active:scale-100 hover:bg-green-500">
         <div class="flex items-center  justify-center h-20 ">
-            <button id= "volume" name="cut" onclick="Build_Jason_sendtobackend(this.id,this.name)">
+            <button id= "cut" name="volume" onclick="build_json_send_to_back_end(this.name,this.id)">
                 <i class="fa fa-volume-off "  style="font-size:40px;color:#ffffff; border-radius: 85%;align-content: center;align-items: center;"></i>
             </buttom>
         </div>
     </div>
     <div class="rounded-md bg-rose-500 h-20 w-20  ml-28 max-w-xs transition duration-300 ease-in-out hover:scale-110 focus:scale-110 active:scale-100 hover:bg-green-500">
         <div class="flex items-center  justify-center h-20 ">
-            <button id= "chanel" name="much" onclick="Build_Jason_sendtobackend(this.id,this.name)">
+            <button id= "chanel" name="much" onclick="build_json_send_to_back_end(this.id,this.name)">
                 <i class="fa fa-angle-up "  style="font-size:40px;color:#ffffff; border-radius: 85%;align-content: center;align-items: center;"></i>
             </button>
         </div>
     </div>
     <div class="rounded-md bg-rose-500 h-20 w-20 ml-28 max-w-xs transition duration-300 ease-in-out hover:scale-110 focus:scale-110 active:scale-100 hover:bg-green-500">
         <div class="flex items-center  justify-center h-20 ">
-            <button id= "chanel" name="low" onclick="Build_Jason_sendtobackend(this.id,this.name)">
+            <button id= "chanel" name="low" onclick="build_json_send_to_back_end(this.id,this.name)">
                 <i class="fa fa-angle-down "  style="font-size:40px;color:#ffffff; border-radius: 85%;align-content: center;align-items: center;"></i>
             </buttom>
         </div>
@@ -203,25 +193,25 @@
 
 <div class="grid grid-cols-3 gap-4 gap-y-px  absolute bottom-5 right-80 place-items-center ">
     <div class="rounded-full bg-gray-300 h-12 w-12 mb-7 mr-7 max-w-xs transition duration-300 ease-in-out hover:scale-110 hover:bg-green-500">
-        <div class="flex items-center justify-center h-12 ofont-mono text-xl "><button id= "chanel" name="1" onclick="Build_Jason_sendtobackend(this.id,this.name)" >1</button></div></div>
+        <div class="flex items-center justify-center h-12 ofont-mono text-xl "><button id= "1" name="chanel" onclick="build_json_send_to_back_end(this.name,this.id)" >1</button></div></div>
     <div class="rounded-full bg-gray-300 h-12 w-12  mb-7 mr-7 max-w-xs transition duration-300 ease-in-out hover:scale-110 hover:bg-green-500">
-        <div class="flex items-center justify-center h-12 ofont-mono text-xl"><button id= "chanel" name="2" onclick="Build_Jason_sendtobackend(this.id,this.name)">2</button></div></div>
+        <div class="flex items-center justify-center h-12 ofont-mono text-xl"><button id= "2" name="chanel" onclick="build_json_send_to_back_end(this.name,this.id)">2</button></div></div>
     <div class="rounded-full bg-gray-300 h-12 w-12 mb-7 mr-7 max-w-xs transition duration-300 ease-in-out hover:scale-110 hover:bg-green-500">
-        <div class="flex items-center justify-center h-12 ofont-mono text-xl"><button  id= "chanel" name="3" onclick="Build_Jason_sendtobackend(this.id,this.name)">3</button></div></div>
+        <div class="flex items-center justify-center h-12 ofont-mono text-xl"><button  id= "3" name="chanel" onclick="build_json_send_to_back_end(this.name,this.id)">3</button></div></div>
     <div class="rounded-full bg-gray-300 h-12 w-12 mb-7 mr-7 max-w-xs transition duration-300 ease-in-out hover:scale-110 hover:bg-green-500">
-        <div class="flex items-center justify-center h-12 ofont-mono text-xl"><button id= "chanel" name="4" onclick="Build_Jason_sendtobackend(this.id,this.name)">4</button></div></div>
+        <div class="flex items-center justify-center h-12 ofont-mono text-xl"><button id= "4" name="chanel" onclick="build_json_send_to_back_end(this.name,this.id)">4</button></div></div>
     <div class="rounded-full bg-gray-300 h-12 w-12 mb-7 mr-7 max-w-xs transition duration-300 ease-in-out hover:scale-110 hover:bg-green-500">
-        <div class="flex items-center justify-center h-12 ofont-mono text-xl"><button id= "chanel" name="5" onclick="Build_Jason_sendtobackend(this.id,this.name)">5</button></div></div>
+        <div class="flex items-center justify-center h-12 ofont-mono text-xl"><button id= "5" name="chanel" onclick="build_json_send_to_back_end(this.name,this.id)">5</button></div></div>
     <div class="rounded-full bg-gray-300 h-12 w-12  mb-7 mr-7 max-w-xs transition duration-300 ease-in-out hover:scale-110 hover:bg-green-500">
-        <div class="flex items-center justify-center h-12 ofont-mono text-xl"><button id= "chanel" name="6" onclick="Build_Jason_sendtobackend(this.id,this.name)">6</button></div></div>
+        <div class="flex items-center justify-center h-12 ofont-mono text-xl"><button id= "6" name="chanel" onclick="build_json_send_to_back_end(this.name,this.id)">6</button></div></div>
     <div class="rounded-full bg-gray-300 h-12 w-12 mb-7 mr-7 max-w-xs transition duration-300 ease-in-out hover:scale-110 hover:bg-green-500 hoverable">
-        <div class="flex items-center justify-center h-12 ofont-mono text-xl"><button  id= "chanel" name="7" onclick="Build_Jason_sendtobackend(this.id,this.name)">7</button></div></div>
+        <div class="flex items-center justify-center h-12 ofont-mono text-xl"><button  id= "7" name="chanel" onclick="build_json_send_to_back_end(this.name,this.id)">7</button></div></div>
     <div class="rounded-full bg-gray-300 h-12 w-12 mb-7 mr-7 max-w-xs transition duration-300 ease-in-out hover:scale-110 hover:bg-green-500">
-        <div class="flex items-center justify-center h-12 ofont-mono text-xl"><button id= "chanel" name="8" onclick="Build_Jason_sendtobackend(this.id,this.name)">8</button></div></div>
+        <div class="flex items-center justify-center h-12 ofont-mono text-xl"><button id= "8" name="chanel" onclick="build_json_send_to_back_end(this.name,this.id)">8</button></div></div>
     <div class="rounded-full bg-gray-300 h-12 w-12 mb-7 mr-7 max-w-xs transition duration-300 ease-in-out hover:scale-110 hover:bg-green-500">
-        <div class="flex items-center justify-center h-12 ofont-mono text-xl"><button  id= "chanel " name="9" onclick="Build_Jason_sendtobackend(this.id,this.name)">9</button></div></div>
+        <div class="flex items-center justify-center h-12 ofont-mono text-xl"><button  id= "9" name="chanel" onclick="build_json_send_to_back_end(this.name,this.id)">9</button></div></div>
     <div class="rounded-full bg-gray-300 h-12 w-12 mb-7 col-start-2 mr-7 max-w-xs transition duration-300 ease-in-out hover:scale-110 hover:bg-green-500">
-        <div class="flex items-center justify-center h-12 ofont-mono text-xl"><button  id= "chanel " name="0" onclick="Build_Jason_sendtobackend(this.id,this.name)">0</button></div></div>
+        <div class="flex items-center justify-center h-12 ofont-mono text-xl"><button  id= "0" name="chanel" onclick="build_json_send_to_back_end(this.name,this.id)">0</button></div></div>
 </div>
 
 </body> 
