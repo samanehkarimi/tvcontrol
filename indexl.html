@@ -13,6 +13,7 @@
   <script>
     function Build_Jason_sendtobackend(idButtom,nameButtom){
         let data = {Buttom_type:idButtom, name_chanel: nameButtom};
+        let value= idButtom;
         let word=JSON.stringify(data);
         console.log(word);
         console.log(); 
@@ -35,6 +36,32 @@
         };
         request.send();
     }
+    function click_power(){
+        const powerButton = document.getElementById("powerButton");
+        const Buttontype = document.getElementById("power");
+        const isPowerOn = powerButton.classList.contains("bg-green-500");
+        if (isPowerOn) {  
+            powerButton.classList.remove("bg-green-500");     
+            powerButton.classList.add("bg-red-600"); 
+        } else {        
+            powerButton.classList.remove("bg-red-600");        
+            powerButton.classList.add("bg-green-500");
+        }
+        const jsonData = {        
+            powerStatus: isPowerOn ? "off" : "on" ,Buttom_type:"power"};      
+        let request = new XMLHttpRequest;
+        request.open("POST","url")
+        request.onreadystatechange= function(){
+            if(this.readyState==4 && this.status==200){
+                alert(this.responseText);
+            }
+        }
+        request.setRequestHeader("content-type","application/json");
+        request.send(JSON.stringify(jsonData));
+        console.log(JSON.stringify(jsonData));
+
+    }
+
 
     </script>
 </head>
@@ -43,13 +70,13 @@
 <div class="flex items-center justify-center absolute  bottom-5 left-2/4">
     <img src="C:\Users\Mohsen\Desktop\tailwindcssh\tvcontrol\CompanyLogo.png"alt="Company logo" class="object-fill w-16 h-16 object-cover rounded-md ">
 </div>
-<div class="rounded-full bg-red-600  lg:h-20 w-20  relative  top-10  left-32 max-w-xs transition duration-300 ease-in-out hover:scale-110 focus:scale-110 active:scale-100 hover:bg-green-500">
-        <div class="flex items-center  justify-center h-20 ">
-            <button  id= "power" name="on" name="off" onclick="Build_Jason_sendtobackend(this.id)">
+<div class="rounded-full bg-red-600  lg:h-20 w-20  relative  top-10  left-32 max-w-xs transition duration-300 ease-in-out hover:scale-110 focus:scale-110 active:scale-100 hover:bg-green-500"id= "powerButton" name="power" onclick="click_power()">
+    <div class="flex items-center  justify-center h-20 ">
+            
             <i class="fa fa-power-off "  style="font-size:50px;color:#ffffff; border-radius: 85%;align-content: center;align-items: center;"></i>
-            </button>
         </div>
 </div>
+
 <div class="rounded bg-gray-500 h-36 w-80  absolute top-10 right-20">
     <div class="h-24 w-24 absolute top-9 right-12">
         <div class="flex items-center  justify-center h-20 ">
