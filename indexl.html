@@ -58,19 +58,19 @@
 <div class="flex items-center justify-center absolute  bottom-5 left-2/4">
     <img src="C:\Users\Mohsen\Desktop\tailwindcssh\tvcontrol\CompanyLogo.png"alt="Company logo" class="object-fill w-16 h-16 object-cover rounded-md ">
 </div>
-<div class="rounded-full bg-red-600  lg:h-20 w-20  relative  top-10  left-32 max-w-xs transition duration-300 ease-in-out hover:scale-110 focus:scale-110 active:scale-100 hover:bg-yellow-500
+<div class="rounded-full bg-red-600  lg:h-20 lg:w-20  lg:relative  lg:top-10  lg:left-32  lg:max-w-xs transition duration-300 ease-in-out hover:scale-110 focus:scale-110 active:scale-100 hover:bg-yellow-500
+ sm:relative :h-16 sm:w-16 sm:top-5 sm:left-16
 active:translate-y-2  active:[box-shadow:0_0px_0_0_#dc2626,0_0px_0_0_#dc2626]
 active:border-b-[0px]
 transition-all duration-150 [box-shadow:0_8px_0_0_#dc2626,0_13px_0_0_#dc2626]
 border-[1px] border-red-400"id= "on_off" name="power" onclick="click_power()">
-    <div class="flex items-center  justify-center h-20 ">
-            
-            <i class="fa fa-power-off "  style="font-size:50px;color:#ffffff; border-radius: 85%;align-content: center;align-items: center;"></i>
-        </div>
+    <div class="flex items-center  justify-center lg:h-20 sm:h-14 ">
+             <i class="fa fa-power-off " class=" sm:text-5xl"  style="font-size:50px;color:#ffffff; border-radius: 85%;align-content: center;align-items: center;"></i>
+    </div>
 </div>
 
-<div class="rounded bg-gray-500 h-36 w-80  absolute top-5 right-20">
-    <div class="h-24 w-24 absolute top-9 right-12 shadow-lg  shadow-zinc-500 hover:shadow-zinc-darken-2">
+<div class="rounded bg-gray-500 h-36 w-80  absolute lg:top-5 lg:right-20 sm:top-5 sm:right-">
+    <div class="h-24 w-24 absolute top-9 right-12 ">
         <div class="flex items-center  justify-center h-20 ">
             <i class="fa-solid fa-temperature-full "  style="font-size:100px;color:#ffffff; border-radius: 85%;align-content: center;align-items: center;"></i>
         </div>
@@ -82,56 +82,65 @@ border-[1px] border-red-400"id= "on_off" name="power" onclick="click_power()">
     </div>
 </div>
 
-<div class=" flex flex-row box-content absolute top-48 ">
-    <div class="rounded-md bg-orange-500 h-20 w-20 ml-28 max-w-xs ease-in-out hover:scale-110 focus:scale-110 active:scale-100 hover:bg-green-500
+
+
+
+<div class=" flex lg:flex-row sm:flex-col box-content absolute lg:top-48 sm:top-24 ">
+    <div class="rounded-md bg-orange-500 lg:h-20 lg:w-20 lg:ml-28 max-w-xs  hover:scale-110 focus:scale-110 active:scale-100 hover:bg-green-500
+    sm:h-14 sm:w-14 sm:ml-16 sm:mt-7
     active:translate-y-2  active:[box-shadow:0_0px_0_0_#f97316,0_0px_0_0_#f97316]
     active:border-b-[0px]
     transition-all duration-150 [box-shadow:0_10px_0_0_#f97316,0_10px_0_0_#f97316]
     border-b-[1px] border-orange-400">
-        <div class="flex items-center  justify-center h-20 ">
+        <div class="flex items-center  justify-center lg:h-20 sm:h-16 ">
             <button id= "much" name="volume" onclick="build_json_send_to_back_end(this.name,this.id)">
             <i class="fa fa-volume-up" style="font-size:40px;color:#ffffff; border-radius: 85%;align-content: center;align-items: center;"></i>
             </button>
         </div>
     </div>
 
-    <div class="rounded-md bg-orange-500 h-20 w-20  ml-28 max-w-xs ease-in-out hover:scale-110 focus:scale-110 active:scale-100 hover:bg-green-500
+    <div class="rounded-md bg-orange-500 lg:h-20 lg:w-20  lg:ml-28 max-w-xs ease-in-out hover:scale-110 focus:scale-110 active:scale-100 hover:bg-green-500
+    sm:h-14 sm:w-14 sm:ml-16 sm:mt-7
     active:translate-y-2  active:[box-shadow:0_0px_0_0_#f97316,0_0px_0_0_#f97316]
     active:border-b-[0px]
     transition-all duration-150 [box-shadow:0_10px_0_0_#f97316,0_10px_0_0_#f97316]
     border-b-[1px] border-orange-400">
-        <div class="flex items-center  justify-center h-20 ">
+        <div class="flex items-center  justify-center lg:h-20 sm:h-16">
             <button id= "low" name="volume" onclick="build_json_send_to_back_end(this.name,this.id)">
                 <i class="fa fa-volume-down"  style="font-size:40px;color:#ffffff; border-radius: 85%;align-content: center;align-items: center;"></i>
             </button>
         </div>
     </div>
 
-    <div class="rounded-md bg-orange-500 h-20 w-20 ml-28 max-w-xs ease-in-out hover:scale-110 focus:scale-110 active:scale-100 hover:bg-green-500
+    <div class="rounded-md bg-orange-500 h-20 w-20 ml-28 max-w-xs  hover:scale-110 focus:scale-110 active:scale-100 hover:bg-green-500
+    sm:h-14 sm:w-14 sm:ml-16 sm:mt-7
     active:translate-y-2  active:[box-shadow:0_0px_0_0_#f97316,0_0px_0_0_#f97316]
     active:border-b-[0px]
     transition-all duration-150 [box-shadow:0_10px_0_0_#f97316,0_10px_0_0_#f97316]
     border-b-[1px] border-orange-400">
-        <div class="flex items-center  justify-center h-20 ">
+        <div class="flex items-center  justify-center lg:h-20 sm:h-16">
             <button id= "cut" name="volume" onclick="build_json_send_to_back_end(this.name,this.id)">
                 <i class="fa fa-volume-off "  style="font-size:40px;color:#ffffff; border-radius: 85%;align-content: center;align-items: center;"></i>
             </buttom>
         </div>
     </div>
 
-    <div class="rounded-md bg-rose-500 h-20 w-20  ml-28 max-w-xs ease-in-out hover:scale-110 focus:scale-110 active:scale-100 hover:bg-green-500
+    <div class="rounded-md bg-rose-500 h-20 w-20  ml-28 max-w-xs  hover:scale-110 focus:scale-110 active:scale-100 hover:bg-green-500
+    sm:h-14 sm:w-14 sm:ml-16 sm:mt-7
     active:translate-y-2  active:[box-shadow:0_0px_0_0_#f43f5e,0_0px_0_0_#f43f5e]
     active:border-b-[0px]
     transition-all duration-150 [box-shadow:0_10px_0_0_#f43f5e,0_10px_0_0_#f43f5e]
     border-b-[1px] border-rose-400">
-        <div class="flex items-center  justify-center h-20 ">
+        <div class="flex items-center  justify-center lg:h-20 sm:h-16 ">
             <button id= "chanel" name="much" onclick="build_json_send_to_back_end(this.id,this.name)">
                 <i class="fa fa-angle-up "  style="font-size:40px;color:#ffffff; border-radius: 85%;align-content: center;align-items: center;"></i>
             </button>
         </div>
     </div>
 
-    <div class="rounded-md bg-rose-500 h-20 w-20 ml-28 max-w-xs ease-in-out hover:scale-110 focus:scale-110 active:scale-100 hover:bg-green-500
+
+    <div class="rounded-md bg-rose-500 h-20 w-20 ml-28 max-w-xs hover:scale-110 focus:scale-110 active:scale-100 hover:bg-green-500
+    sm:h-14 sm:w-14 sm:ml-16 sm:mt-7
     active:translate-y-2  active:[box-shadow:0_0px_0_0_#f43f5e,0_0px_0_0_#f43f5e]
     active:border-b-[0px]
     transition-all duration-150 [box-shadow:0_10px_0_0_#f43f5e,0_10px_0_0_#f43f5e]
@@ -143,7 +152,8 @@ border-[1px] border-red-400"id= "on_off" name="power" onclick="click_power()">
         </div>
     </div>
 
-    <div class="rounded-md bg-rose-500 h-20 w-20  ml-28 max-w-xs ease-in-out hover:scale-110 focus:scale-110 active:scale-100 hover:bg-green-500
+    <div class="rounded-md bg-rose-500 h-20 w-20  ml-28 max-w-xs  hover:scale-110 focus:scale-110 active:scale-100 hover:bg-green-500
+    sm:h-14 sm:w-14 sm:ml-16 sm:mt-7
     active:translate-y-2  active:[box-shadow:0_0px_0_0_#f43f5e,0_0px_0_0_#f43f5e]
     active:border-b-[0px]
     transition-all duration-150 [box-shadow:0_10px_0_0_#f43f5e,0_10px_0_0_#f43f5e]
