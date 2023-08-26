@@ -25,6 +25,17 @@
         }
         request.setRequestHeader("content-type","application/json");
         request.send(JSON.stringify(data));
+
+
+    }
+    function temperature(type_button){
+        request.open("GET","url", true);
+        request.onreadystatechange = function() { 
+             if (request.readyState === 4 && request.status === 200) {    
+                let response = JSON.parse(request.responseText);    
+                 }
+        };
+        request.send();
     }
     function click_power(){ 
         const powerButton = document.getElementById("on_off");
@@ -71,14 +82,14 @@ border-[1px] border-red-400"id= "on_off" name="power" onclick="click_power()">
 </div>
 
 <div class="rounded bg-gray-500 lg:h-36 lg:w-80 sm:h-24 sm:w-64 absolute lg:top-5 lg:right-20 sm:top-5 sm:right-10">
-    <div class="lg:h-24 lg:w-24 sm:h-5 sm:w-5 absolute lg:top-9 lg:right-12 sm:top:9 sm:right-8">
-        <div class="flex items-center  justify-center lg:h-20 sm:h-12 ">
+    <div class="lg:h-24 lg:w-24 sm:h-4 sm:w-5 absolute lg:top-9 lg:right-12 sm:top-5 sm:right-8">
+        <div class="flex items-center  justify-center lg:h-20 sm:h-12">
             <i class="fa-solid fa-temperature-full "  style="font-size:100px;color:#ffffff; border-radius: 85%;align-content: center;align-items: center;"></i>
         </div>
     </div>
     <div class="lg:h-16 lg:w-48 sm:h-14 sm:w-36   absolute lg:top-10 lg:right-36 sm:top-8 sm:right-28">
         <div class="flex items-center  justify-center lg:h-16 sm:h-12  font-serif text-xl font-bold text-white ">
-            <button  id= "button type display temperature"id= "temperatureDisplay " name="0" onclick="build_json_send_to_back_end()">temperature:</button>
+            <button  id= "button type display temperature"id= "type_button " onclick="temperature()">temperature:</button>
         </div>
     </div>
 </div>

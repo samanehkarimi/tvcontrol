@@ -558,22 +558,6 @@ video {
   bottom: 0.25rem;
 }
 
-.right-12 {
-  right: 3rem;
-}
-
-.right-36 {
-  right: 9rem;
-}
-
-.top-10 {
-  top: 2.5rem;
-}
-
-.top-9 {
-  top: 2.25rem;
-}
-
 .col-start-1 {
   grid-column-start: 1;
 }
@@ -630,36 +614,12 @@ video {
   display: none;
 }
 
-.h-12 {
-  height: 3rem;
-}
-
 .h-16 {
   height: 4rem;
 }
 
-.h-24 {
-  height: 6rem;
-}
-
-.h-36 {
-  height: 9rem;
-}
-
 .w-16 {
   width: 4rem;
-}
-
-.w-24 {
-  width: 6rem;
-}
-
-.w-48 {
-  width: 12rem;
-}
-
-.w-80 {
-  width: 20rem;
 }
 
 .max-w-xs {
@@ -812,11 +772,6 @@ video {
 
 .font-serif {
   font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
-}
-
-.text-base {
-  font-size: 1rem;
-  line-height: 1.5rem;
 }
 
 .text-xl {
@@ -974,12 +929,24 @@ video {
     left: 10rem;
   }
 
+  .sm\:right-10 {
+    right: 2.5rem;
+  }
+
   .sm\:right-16 {
     right: 4rem;
   }
 
+  .sm\:right-28 {
+    right: 7rem;
+  }
+
   .sm\:right-44 {
     right: 11rem;
+  }
+
+  .sm\:right-8 {
+    right: 2rem;
   }
 
   .sm\:top-1\/4 {
@@ -994,28 +961,8 @@ video {
     top: 1.25rem;
   }
 
-  .sm\:right-14 {
-    right: 3.5rem;
-  }
-
-  .sm\:right-8 {
-    right: 2rem;
-  }
-
-  .sm\:right-24 {
-    right: 6rem;
-  }
-
   .sm\:top-8 {
     top: 2rem;
-  }
-
-  .sm\:right-10 {
-    right: 2.5rem;
-  }
-
-  .sm\:right-28 {
-    right: 7rem;
   }
 
   .sm\:mb-7 {
@@ -1062,12 +1009,24 @@ video {
     height: 6rem;
   }
 
+  .sm\:h-5 {
+    height: 1.25rem;
+  }
+
+  .sm\:h-4 {
+    height: 1rem;
+  }
+
+  .sm\:h-3 {
+    height: 0.75rem;
+  }
+
   .sm\:h-8 {
     height: 2rem;
   }
 
-  .sm\:h-5 {
-    height: 1.25rem;
+  .sm\:h-6 {
+    height: 1.5rem;
   }
 
   .sm\:w-10 {
@@ -1086,24 +1045,16 @@ video {
     width: 4rem;
   }
 
-  .sm\:w-56 {
-    width: 14rem;
-  }
-
   .sm\:w-36 {
     width: 9rem;
   }
 
-  .sm\:w-64 {
-    width: 16rem;
-  }
-
-  .sm\:w-8 {
-    width: 2rem;
-  }
-
   .sm\:w-5 {
     width: 1.25rem;
+  }
+
+  .sm\:w-64 {
+    width: 16rem;
   }
 
   .sm\:flex-col {
@@ -1118,11 +1069,6 @@ video {
   .sm\:text-5xl {
     font-size: 3rem;
     line-height: 1;
-  }
-
-  .sm\:text-xl {
-    font-size: 1.25rem;
-    line-height: 1.75rem;
   }
 
   .sm\:text-sm {
@@ -1156,12 +1102,20 @@ video {
     left: 8rem;
   }
 
+  .lg\:right-12 {
+    right: 3rem;
+  }
+
   .lg\:right-20 {
     right: 5rem;
   }
 
   .lg\:right-24 {
     right: 6rem;
+  }
+
+  .lg\:right-36 {
+    right: 9rem;
   }
 
   .lg\:right-80 {
@@ -1180,16 +1134,8 @@ video {
     top: 1.25rem;
   }
 
-  .lg\:right-12 {
-    right: 3rem;
-  }
-
   .lg\:top-9 {
     top: 2.25rem;
-  }
-
-  .lg\:right-36 {
-    right: 9rem;
   }
 
   .lg\:mb-10 {
@@ -1252,12 +1198,12 @@ video {
     width: 6rem;
   }
 
-  .lg\:w-80 {
-    width: 20rem;
-  }
-
   .lg\:w-48 {
     width: 12rem;
+  }
+
+  .lg\:w-80 {
+    width: 20rem;
   }
 
   .lg\:max-w-xs {
