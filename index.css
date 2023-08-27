@@ -1,79 +1,44 @@
-.gradient-mask {
-    visibility: hidden;
+.rGauge {
+    width: 200px;
+    height: 145px;
   }
   
-  .gauge-container {
-    padding: 20px;
-    margin-top: 80px;
-    display: flex;
-    justify-content: space-around;
+  .rGauge-base {
+    stroke: #edebeb;
+    fill: none;
   }
   
-  .gauge {
-    height: 220px;
-    width: 300px;
+  .rGauge-progress {
+    fill: none;
   }
   
-  .gauge .dxg-range.dxg-background-range {
-    fill: url(#gradientGauge);
+  .rGauge-val {
+    font-weight: 700;
+    font-size: 1.3em;
   }
   
-  .gauge .dxg-line {
-    -webkit-transform: scaleX(1.04) scaleY(1.03) translate(-4px, -4px);
-            transform: scaleX(1.04) scaleY(1.03) translate(-4px, -4px);
+  .rGauge-min-val, .rGauge-max-val {
+    fill: #b3b3b3;
   }
   
-  .gauge .dxg-line path:first-child,
-  .gauge .dxg-line path:last-child {
-    display: none;
+  .vGauge {
+    width: 145px;
+    height: 145px;
   }
   
-  .gauge .dxg-line path:nth-child(2),
-  .gauge .dxg-line path:nth-child(6) {
-    stroke: #ed811c;
+  .vGauge-base {
+    fill: #edebeb;
   }
   
-  .gauge .dxg-line path:nth-child(3),
-  .gauge .dxg-line path:nth-child(5) {
-    stroke: #a7db29;
+  .vGauge-progress {
+    
   }
   
-  .gauge .dxg-line path:nth-child(4) {
-    stroke: #25cd6b;
+  .vGauge-val {
+    font-weight: 700;
+    font-size: 1.3em;
   }
   
-  .gauge .dxg-elements text:first-child {
-    -webkit-transform: translate(19px, 13px);
-            transform: translate(19px, 13px);
-  }
-  
-  .gauge .dxg-elements text:last-child {
-    -webkit-transform: translate(-27px, 14px);
-            transform: translate(-27px, 14px);
-  }
-  
-  .gauge .dxg-value-indicator path {
-    -webkit-transform: scale(1.2) translate(0, -5px);
-            transform: scale(1.2) translate(0, -5px);
-    -webkit-transform-origin: center center;
-            transform-origin: center center;
-  }
-  
-  .gauge .dxg-value-indicator .dxg-title {
-    text-transform: uppercase;
-  }
-  
-  .gauge .dxg-value-indicator .dxg-title text:first-child {
-    -webkit-transform: translateY(5px);
-            transform: translateY(5px);
-  }
-  
-  .gauge .dxg-value-indicator .dxg-spindle-border:nth-child(4),
-  .gauge .dxg-value-indicator .dxg-spindle-hole:nth-child(5) {
-    -webkit-transform: translate(0, -109px);
-            transform: translate(0, -109px);
-  }
-  
-  .gauge .dxg-value-indicator .dxg-spindle-hole {
-    fill: #26323a;
+  .vGauge-min-val, .vGauge-max-val {
+    fill: #b3b3b3;
   }

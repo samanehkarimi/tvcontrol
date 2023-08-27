@@ -9,8 +9,8 @@ module.exports = {
         'mobile': '360px'
         // => @media (min-width: 640px) { ...
       },
-      spacing: {
-        '100': '100px',
+      top:{
+        '1/5': '100px',
       }
   },
   plugins: [],
