@@ -909,6 +909,20 @@ video {
 }
 
 @media (min-width: 360px) {
+  .mobile\:relative {
+    position: relative;
+  }
+
+  .mobile\:inset-y-1\/4 {
+    top: 25%;
+    bottom: 25%;
+  }
+
+  .mobile\:inset-y-1\/3 {
+    top: 33.333333%;
+    bottom: 33.333333%;
+  }
+
   .mobile\:bottom-3 {
     bottom: 0.75rem;
   }
@@ -997,6 +1011,82 @@ video {
     top: 6rem;
   }
 
+  .mobile\:left-20 {
+    left: 5rem;
+  }
+
+  .mobile\:right-10 {
+    right: 2.5rem;
+  }
+
+  .mobile\:top-5 {
+    top: 1.25rem;
+  }
+
+  .mobile\:right-2 {
+    right: 0.5rem;
+  }
+
+  .mobile\:left-2 {
+    left: 0.5rem;
+  }
+
+  .mobile\:left-64 {
+    left: 16rem;
+  }
+
+  .mobile\:right-28 {
+    right: 7rem;
+  }
+
+  .mobile\:top-12 {
+    top: 3rem;
+  }
+
+  .mobile\:right-24 {
+    right: 6rem;
+  }
+
+  .mobile\:right-20 {
+    right: 5rem;
+  }
+
+  .mobile\:right-16 {
+    right: 4rem;
+  }
+
+  .mobile\:top-1\/4 {
+    top: 25%;
+  }
+
+  .mobile\:right-14 {
+    right: 3.5rem;
+  }
+
+  .mobile\:right-12 {
+    right: 3rem;
+  }
+
+  .mobile\:top-10 {
+    top: 2.5rem;
+  }
+
+  .mobile\:top-8 {
+    top: 2rem;
+  }
+
+  .mobile\:left-10 {
+    left: 2.5rem;
+  }
+
+  .mobile\:left-8 {
+    left: 2rem;
+  }
+
+  .mobile\:top-7 {
+    top: 1.75rem;
+  }
+
   .mobile\:mb-5 {
     margin-bottom: 1.25rem;
   }
@@ -1037,6 +1127,10 @@ video {
     margin-left: 1.5rem;
   }
 
+  .mobile\:mt-10 {
+    margin-top: 2.5rem;
+  }
+
   .mobile\:h-12 {
     height: 3rem;
   }
@@ -1047,6 +1141,26 @@ video {
 
   .mobile\:h-10 {
     height: 2.5rem;
+  }
+
+  .mobile\:h-24 {
+    height: 6rem;
+  }
+
+  .mobile\:h-4 {
+    height: 1rem;
+  }
+
+  .mobile\:h-3 {
+    height: 0.75rem;
+  }
+
+  .mobile\:h-2 {
+    height: 0.5rem;
+  }
+
+  .mobile\:h-16 {
+    height: 4rem;
   }
 
   .mobile\:w-12 {
@@ -1061,12 +1175,42 @@ video {
     width: 2.5rem;
   }
 
+  .mobile\:w-32 {
+    width: 8rem;
+  }
+
+  .mobile\:w-64 {
+    width: 16rem;
+  }
+
+  .mobile\:w-56 {
+    width: 14rem;
+  }
+
+  .mobile\:w-5 {
+    width: 1.25rem;
+  }
+
+  .mobile\:w-16 {
+    width: 4rem;
+  }
+
   .mobile\:flex-row {
     flex-direction: row;
   }
 
   .mobile\:flex-col {
     flex-direction: column;
+  }
+
+  .mobile\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .mobile\:text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
   }
 }
 
