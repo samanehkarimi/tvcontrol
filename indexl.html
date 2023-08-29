@@ -10,6 +10,10 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <link rel="stylesheet" href="./index.css">
   <script src="jquery.min.js"></script>
+  <link rel="stylesheet" href="./sty.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.7/vue.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
   <script>
     function build_json_send_to_back_end(name_button,id_button){
         let data = {button_type: name_button,value : id_button};
@@ -84,12 +88,46 @@ border-[1px] border-red-400"id= "on_off" name="power" onclick="click_power()">
     </div>
 </div>
 
-<div id="chart-container"></div>
+     <div id="app" class="absolute top-4 right-10 w-64 h-64 bg-Slate-950 bg-slate-800 overflow-hidden shadow-3xl rounded-sm mt-2 ml-2 font-sans">
+                <div class="absolute w-64 bg-Slate-500 p-2.5 text-sm text-center rounded-none top-0" style="border-bottom: 2px solid #fff;">
+                    <label style="	display: block; color: #fff; padding: 2px; letter-spacing: 2px; font-size: 12px;">Enter a city:</label>
+                    <input  class="w-32"style="	border: none;padding: 4px 8px;background: #404040;border-radius: 5px;color: #fff;" type="text" v-model="city"> 
+                </div>
+                <div class="center">
+                    <div class="circle">
+                        <div class="panel">
+                            <span class="maxmin">
+                                <span class="min">50</span>
+                                <span>/</span>
+                                <span class="max"> 43</span>
+                            </span>
+                            <transition name="test">
+                                <span class="temp"> 20 </span>
+                            </transition>
+                            
+                            <span class="location"> mashad</span>
+                            <svg class="marker-svg" height="120" width="120">
+                                <defs>
+                                    <marker id="arrow" markerWidth="10" markerHeight="10" refX="60" refY="3" orient="auto" markerUnits="strokeWidth">
+                                        <path d="M5,0 L5,5 L0,3 z" fill="#f00" />
+                                    </marker>
+                                </defs>
+                                <line class="line" x1="0" y1="60" x2="120" y2="60" marker-end="url(#arrow)" />
+                            </svg>
+                        </div>
+                        <div class="helper"></div>
+                    </div>
+                </div>
+            </div>
+            <script src="./ind.js"></script>
+
+
+
 
 
 
 <div class=" flex lg:flex-row sm:flex-col mobile:flex-col box-content absolute lg:top-36 sm:top-24 mobile:top-24 ">
-    <div class="rounded-md bg-orange-500 lg:h-20 lg:w-20 lg:ml-28 max-w-xs  hover:scale-110 focus:scale-110 active:scale-100 hover:bg-green-500
+    <div class="rounded-md bg-orange-500 lg:h-20 lg:w-20 lg:ml-24 max-w-xs  hover:scale-110 focus:scale-110 active:scale-100 hover:bg-green-500
     sm:h-14 sm:w-14 sm:ml-16 sm:mt-7 mobile:h-14 mobile:w-14 mobile:ml-6 mobile:mt-10
     active:translate-y-2  active:[box-shadow:0_0px_0_0_#f97316,0_0px_0_0_#f97316]
     active:border-b-[0px]
@@ -102,7 +140,7 @@ border-[1px] border-red-400"id= "on_off" name="power" onclick="click_power()">
         </div>
     </div>
 
-    <div class="rounded-md bg-orange-500 lg:h-20 lg:w-20  lg:ml-28 max-w-xs ease-in-out hover:scale-110 focus:scale-110 active:scale-100 hover:bg-green-500
+    <div class="rounded-md bg-orange-500 lg:h-20 lg:w-20  lg:ml-24 max-w-xs ease-in-out hover:scale-110 focus:scale-110 active:scale-100 hover:bg-green-500
     sm:h-14 sm:w-14 sm:ml-16 sm:mt-7 mobile:h-14 mobile:w-14 mobile:ml-6 mobile:mt-10
     active:translate-y-2  active:[box-shadow:0_0px_0_0_#f97316,0_0px_0_0_#f97316]
     active:border-b-[0px]
@@ -115,7 +153,7 @@ border-[1px] border-red-400"id= "on_off" name="power" onclick="click_power()">
         </div>
     </div>
 
-    <div class="rounded-md bg-orange-500 lg:h-20 lg:w-20 lg:ml-28 max-w-xs  hover:scale-110 focus:scale-110 active:scale-100 hover:bg-green-500
+    <div class="rounded-md bg-orange-500 lg:h-20 lg:w-20 lg:ml-24 max-w-xs  hover:scale-110 focus:scale-110 active:scale-100 hover:bg-green-500
     sm:h-14 sm:w-14 sm:ml-16 sm:mt-7 mobile:h-14 mobile:w-14 mobile:ml-6 mobile:mt-10
     active:translate-y-2  active:[box-shadow:0_0px_0_0_#f97316,0_0px_0_0_#f97316]
     active:border-b-[0px]
@@ -128,7 +166,7 @@ border-[1px] border-red-400"id= "on_off" name="power" onclick="click_power()">
         </div>
     </div>
 
-    <div class="rounded-md bg-rose-500 lg:h-20 lg:w-20  lg:ml-28 max-w-xs  hover:scale-110 focus:scale-110 active:scale-100 hover:bg-green-500
+    <div class="rounded-md bg-rose-500 lg:h-20 lg:w-20  lg:ml-24 max-w-xs  hover:scale-110 focus:scale-110 active:scale-100 hover:bg-green-500
     sm:h-14 sm:w-14 sm:ml-16 sm:mt-7 mobile:h-14 mobile:w-14 mobile:ml-6 mobile:mt-10
     active:translate-y-2  active:[box-shadow:0_0px_0_0_#f43f5e,0_0px_0_0_#f43f5e]
     active:border-b-[0px]
@@ -142,7 +180,7 @@ border-[1px] border-red-400"id= "on_off" name="power" onclick="click_power()">
     </div>
 
 
-    <div class="rounded-md bg-rose-500 lg:h-20 lg:w-20 lg:ml-28 max-w-xs hover:scale-110 focus:scale-110 active:scale-100 hover:bg-green-500
+    <div class="rounded-md bg-rose-500 lg:h-20 lg:w-20 lg:ml-24 max-w-xs hover:scale-110 focus:scale-110 active:scale-100 hover:bg-green-500
     sm:h-14 sm:w-14 sm:ml-16 sm:mt-7 mobile:h-14 mobile:w-14 mobile:ml-6 mobile:mt-10
     active:translate-y-2  active:[box-shadow:0_0px_0_0_#f43f5e,0_0px_0_0_#f43f5e]
     active:border-b-[0px]
@@ -155,7 +193,7 @@ border-[1px] border-red-400"id= "on_off" name="power" onclick="click_power()">
         </div>
     </div>
 
-    <div class="rounded-md bg-rose-500 lg:h-20 lg:w-20  lg:ml-28 max-w-xs  hover:scale-110 focus:scale-110 active:scale-100 hover:bg-green-500
+    <div class="rounded-md bg-rose-500 lg:h-20 lg:w-20  lg:ml-24 max-w-xs  hover:scale-110 focus:scale-110 active:scale-100 hover:bg-green-500
     sm:h-14 sm:w-14 sm:ml-16 sm:mt-7 mobile:h-14 mobile:w-14 mobile:ml-6 mobile:mt-10
     active:translate-y-2  active:[box-shadow:0_0px_0_0_#f43f5e,0_0px_0_0_#f43f5e]
     active:border-b-[0px]
