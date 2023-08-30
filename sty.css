@@ -5,12 +5,12 @@
 }
 .frame {
 	position: absolute;
-	top: 50%;
-	left: 50%;
-	width: 400px;
-	height: 400px;
-	margin-top: -200px;
-	margin-left: -200px;
+	top: 10%;
+	right: 2%;
+	width: 300px;
+	height: 300px;
+	margin-top: -50px;
+	margin-left: -50px;
 	border-radius: 2px;
 	box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
 	overflow: hidden;
@@ -23,10 +23,10 @@
 
 .center {
 	position: absolute;
-	top: 50%;
+	top: 65%;
 	left: 50%;
-	width: 200px;
-	height: 200px;
+	width: 175px;
+	height: 175px;
 	background: #fff;
 	border-radius: 50%;
 	box-shadow: 0px 0px 12px 4px rgba(0, 0, 0, 0.1);
@@ -36,8 +36,8 @@
 
 .circle {
 	position: absolute;
-	width: 175px;
-	height: 175px;
+	width: 150px;
+	height: 150px;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
@@ -64,7 +64,7 @@
 
 .panel {
 	position: absolute;
-	width: 120px;
+	width:120px;
 	height: 120px;
 	top: 50%;
 	left: 50%;
@@ -153,7 +153,7 @@
 	background: #404040;
 	border-radius: 8px;
 	color: #fff;
-	width: 140px;
+	width: 70px;
 }
 
 .test-enter {

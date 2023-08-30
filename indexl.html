@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+  <meta charset="UTF-8">
   <title>TV_control</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://kit.fontawesome.com/e543ff8379.js" crossorigin="anonymous"></script>
@@ -10,10 +10,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <link rel="stylesheet" href="./index.css">
   <script src="jquery.min.js"></script>
-  <link rel="stylesheet" href="./sty.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.7/vue.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+  <script src="./ind.js"></script>
   <script>
     function build_json_send_to_back_end(name_button,id_button){
         let data = {button_type: name_button,value : id_button};
@@ -67,8 +64,7 @@
 
     }
 
-
-    
+  
     </script>
 </head>
 <body class="bg-gray-700 ">
@@ -87,42 +83,10 @@ border-[1px] border-red-400"id= "on_off" name="power" onclick="click_power()">
              <i class="fa fa-power-off " class=" sm:text-5xl"  style="font-size:50px;color:#ffffff; border-radius: 85%;align-content: center;align-items: center;"></i>
     </div>
 </div>
-
-     <div id="app" class="absolute top-4 right-10 w-64 h-64 bg-Slate-950 bg-slate-800 overflow-hidden shadow-3xl rounded-sm mt-2 ml-2 font-sans">
-                <div class="absolute w-64 bg-Slate-500 p-2.5 text-sm text-center rounded-none top-0" style="border-bottom: 2px solid #fff;">
-                    <label style="	display: block; color: #fff; padding: 2px; letter-spacing: 2px; font-size: 12px;">Enter a city:</label>
-                    <input  class="w-32"style="	border: none;padding: 4px 8px;background: #404040;border-radius: 5px;color: #fff;" type="text" v-model="city"> 
-                </div>
-                <div class="center">
-                    <div class="circle">
-                        <div class="panel">
-                            <span class="maxmin">
-                                <span class="min">50</span>
-                                <span>/</span>
-                                <span class="max"> 43</span>
-                            </span>
-                            <transition name="test">
-                                <span class="temp"> 20 </span>
-                            </transition>
-                            
-                            <span class="location"> mashad</span>
-                            <svg class="marker-svg" height="120" width="120">
-                                <defs>
-                                    <marker id="arrow" markerWidth="10" markerHeight="10" refX="60" refY="3" orient="auto" markerUnits="strokeWidth">
-                                        <path d="M5,0 L5,5 L0,3 z" fill="#f00" />
-                                    </marker>
-                                </defs>
-                                <line class="line" x1="0" y1="60" x2="120" y2="60" marker-end="url(#arrow)" />
-                            </svg>
-                        </div>
-                        <div class="helper"></div>
-                    </div>
-                </div>
-            </div>
-            <script src="./ind.js"></script>
-
-
-
+<script src="https://code.highcharts.com/highcharts.js"></script> 
+<script src="https://code.highcharts.com/highcharts-more.js"></script> 
+<script src="https://code.highcharts.com/modules/solid-gauge.js"></script> 
+<div id="temp001" style="width: 300px; height: 200px; float:right"></div> 
 
 
 
@@ -381,7 +345,7 @@ border-[1px] border-red-400"id= "on_off" name="power" onclick="click_power()">
             <div class="flex items-center justify-center lg:h-12 sm:h-10 mobile:h-10 ofont-mono text-xl"><button  id= "0" name="chanel" onclick="build_json_send_to_back_end(this.name,this.id)">0</button></div></div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
-    <script src="./index1.js"></script>
+    <script src="./ind.js"></script>
 </body> 
 </html>
 
