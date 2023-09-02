@@ -51,6 +51,7 @@ $(function () {//from w w w .j  av a  2  s. com
             }
         }
     };
+
     $('#temp001').highcharts(Highcharts.merge(gaugeOptions, {
         yAxis: {
             min: -30,
@@ -61,7 +62,7 @@ $(function () {//from w w w .j  av a  2  s. com
         },
         series: [{
             name: 'inTemp',
-            data: [-0.1], /////// Temp Value //////////
+            data: [20], /////// Temp Value //////////
             dataLabels: {
                 format: '<div style="text-align:center"><span style="font-size:25px;color:#000' + ((Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black') + '">{y} &deg;C</span><br/>' + '<span style="font-size:12px;color:silver">abcde</span></div>'
             }
