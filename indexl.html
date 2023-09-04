@@ -8,9 +8,20 @@
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <link rel="stylesheet" href="./dist/style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+  <script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
+  <script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
   <link rel="stylesheet" href="./index.css">
   <script src="jquery.min.js"></script>
-  <script src="./ind.js"></script>
+  <style>
+    .box{
+     margin-bottom: 200px;
+     margin-right:20px;
+     margin-left: auto;
+     width: 300px;
+     height: 200px;
+    }
+  </style>
   <script>
     function build_json_send_to_back_end(name_button,id_button){
         let data = {button_type: name_button,value : id_button};
@@ -82,10 +93,7 @@ border-[1px] border-red-400"id= "on_off" name="power" onclick="click_power()">
              <i class="fa fa-power-off " class=" sm:text-5xl"  style="font-size:50px;color:#ffffff; border-radius: 85%;align-content: center;align-items: center;"></i>
     </div>
 </div>
-<script src="https://code.highcharts.com/highcharts.js"></script> 
-<script src="https://code.highcharts.com/highcharts-more.js"></script> 
-<script src="https://code.highcharts.com/modules/solid-gauge.js"></script> 
-<div id="temp001" style="width: 300px; height: 200px; float:right"></div> 
+<div id="chartdiv" class="box"></div>
 
 
 
@@ -377,8 +385,63 @@ border-[1px] border-red-400"id= "on_off" name="power" onclick="click_power()">
             <div class="flex items-center justify-center lg:h-12 sm:h-10 mobile:h-10 ofont-mono text-xl">
                 <button  id= "0" name="chanel" onclick="build_json_send_to_back_end(this.name,this.id)">0</button></div></div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
-    <script src="./ind.js"></script>
+    <script>
+   
+
+        var data = [
+            {
+             "date": "2022-09-03 00:00:00",
+             "temperature": 25
+            },
+            {
+             "date": "2022-09-03 01:00:00",
+             "temperature": 24
+            },
+            {
+             "date": "2022-09-03 02:00:00",
+             "temperature": 22
+            },
+         
+          ];
+          
+          var chart = am4core.create("chartdiv", am4charts.GaugeChart);
+          chart.innerRadius = am4core.percent(90);
+       
+       
+          var axis = chart.xAxes.push(new am4charts.ValueAxis());
+          axis.min = -50;
+          axis.max = 50;
+          axis.strictMinMax = true;
+          axis.renderer.grid.template.stroke = new am4core.InterfaceColorSet().getFor("background");
+          axis.renderer.grid.template.strokeOpacity = 0.4;
+       
+          var range1 = axis.axisRanges.create();
+          range1.value = -50;
+          range1.endValue = 0;
+          range1.axisFill.fillOpacity = 1;
+          range1.axisFill.fill = am4core.color("#DD0000");
+          range1.axisFill.zIndex = - 1;
+       
+          var range2 = axis.axisRanges.create();
+          range2.value = 0;
+          range2.endValue = 50;
+          range2.axisFill.fillOpacity = 1;
+          range2.axisFill.fill = am4core.color("#00DD00");
+          range2.axisFill.zIndex = -1;
+       
+          var hand = chart.hands.push(new am4charts.ClockHand());
+          hand.value = 0;
+          hand.pin.disabled = true;
+          hand.fill = am4core.color("#444");
+          hand.stroke = am4core.color("#000");
+       
+          setInterval(function() {
+            var dataItem = data[Math.floor(Math.random() * data.length)];
+            var value = dataItem.temperature;
+            hand.showValue(value, 1000, am4core.ease.cubicOut);
+          }, 2000);
+          
+          </script>
 </body> 
 </html>
 

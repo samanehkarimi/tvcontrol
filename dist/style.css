@@ -554,6 +554,18 @@ video {
   position: relative;
 }
 
+.right-20 {
+  right: 5rem;
+}
+
+.top-5 {
+  top: 1.25rem;
+}
+
+.right-5 {
+  right: 1.25rem;
+}
+
 .col-start-1 {
   grid-column-start: 1;
 }
@@ -592,6 +604,10 @@ video {
 
 .table {
   display: table;
+}
+
+.grid {
+  display: grid;
 }
 
 .contents {
@@ -1140,11 +1156,6 @@ video {
 
   .lg\:relative {
     position: relative;
-  }
-
-  .lg\:inset-y-3\/4 {
-    top: 75%;
-    bottom: 75%;
   }
 
   .lg\:inset-y-4\/4 {
