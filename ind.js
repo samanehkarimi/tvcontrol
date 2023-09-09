@@ -88,7 +88,7 @@ var chartSpeed = Highcharts.chart('container', Highcharts.merge(gaugeOptions, {
     },
     series: [{
         name: 'inTemp',
-        data: [25], //data.temperature
+        data: [16], //data.temperature
         dataLabels: {
             format:
                 '<div style="text-align:center">' +
